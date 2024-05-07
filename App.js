@@ -1,11 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { FlatList, StyleSheet, View } from "react-native";
+import NewsKizi from "./components/NewsKizi";
+import Constants from "expo-constants";
+import axios from "axios";
 
+const URI = `https://newsapi.org/v2/top-headlines?country=jp&category=business&apiKey=${Constants.expoConfig?.extra.NewsApiKey}`;
 export default function App() {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    getNews();
+  }, []);
+
+  const getNews = async () => {
+    const response = await axios.get(URI);
+    setNews(response.data.articles);
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FlatList
+        data={news}
+        renderItem={({ item }) => (
+          <NewsKizi
+            imageuri={item.urlToImage}
+            title={item.title}
+            subtext={item.puuublishedAt}
+          />
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
     </View>
   );
 }
@@ -13,8 +37,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
 });
