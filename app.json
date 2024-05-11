@@ -4,10 +4,10 @@
     "slug": "youtube",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/自画像イラスト.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/自画像イラスト.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +24,7 @@
       "package": "com.teruhito4964.youtube"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/自画像イラスト.png"
     },
     "extra": {
       "NewsApiKey": "a298005d39a5407b964ae8acf44f03d3"
