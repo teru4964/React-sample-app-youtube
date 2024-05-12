@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.teruhito4964.youtube"
@@ -27,7 +29,15 @@
       "favicon": "./assets/自画像イラスト.png"
     },
     "extra": {
-      "NewsApiKey": "a298005d39a5407b964ae8acf44f03d3"
+      "NewsApiKey": "a298005d39a5407b964ae8acf44f03d3",
+      "weatherApikey": "0bbf9473888f71fef0e4a7d26161990c",
+      "eas": {
+        "projectId": "0e5a00a4-5190-47a6-b437-0d7aafafa5ca"
+      }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/0e5a00a4-5190-47a6-b437-0d7aafafa5ca"
     }
   }
 }
